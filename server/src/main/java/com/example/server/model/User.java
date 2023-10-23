@@ -1,7 +1,5 @@
 package com.example.server.model;
 
-import java.time.LocalDate;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -22,32 +20,16 @@ public class User {
     @Column(name = "username")
     private String username;
 
-    @Column(name = "email")
-    private String email;
-
     @Column(name = "password")
     private String password;
-
-    @Column(name = "first_name")
-    private String firstName;
-
-    @Column(name = "last_name")
-    private String lastName;
-
-    @Column(name = "birthday")
-    private LocalDate birthday;
 
     User() {
 
     }
 
-    public User(String username, String email, String password, String firstName, String lastName, LocalDate birthday) {
+    public User(String username, String password) {
         this.username = username;
-        this.email = email;
         this.password = password;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.email = email;
     }
 
     public long getId() {
@@ -63,22 +45,6 @@ public class User {
 
     public void setToken(String token) {
         this.token = token;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public LocalDate getBirthday() {
-        return birthday;
     }
 
     public String getPassword() {
